@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1098773048082",
+    "project_id": "applystack-2929d",
+    "storage_bucket": "applystack-2929d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098773048082:android:0f4df868b8b0aafc16a1cb",
+        "android_client_info": {
+          "package_name": "com.priyanshu.applystack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA875H9-ymrPNIorVbwpmRYXOwaVKVRUY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098773048082:android:c77118d731a568f316a1cb",
+        "android_client_info": {
+          "package_name": "com.priyanshu.applystack.applystack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA875H9-ymrPNIorVbwpmRYXOwaVKVRUY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

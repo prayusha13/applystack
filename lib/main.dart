@@ -1,10 +1,9 @@
-import 'package:applystack/screens/interviews/interviews_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-
+// Import all necessary screens and services
 import 'firebase_options.dart';
 import 'services/auth_service.dart';
 import 'screens/auth/login_screen.dart';
@@ -14,9 +13,13 @@ import 'screens/dashboard/dashboard_screen.dart';
 import 'screens/applications/applications_list_screen.dart';
 import 'screens/applications/add_application_screen.dart';
 import 'screens/profile/profile_screen.dart';
+import 'screens/interviews/interviews_list_screen.dart';
+import 'screens/statistics/statistics_screen.dart';
+import 'screens/more/faq_screen.dart';
+import 'screens/more/about_screen.dart';
 
 void main() async {
-
+  // Initialization must happen before runApp
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -56,10 +59,12 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/register', page: () => RegisterScreen()),
         GetPage(name: '/dashboard', page: () => const DashboardScreen()),
         GetPage(name: '/applications', page: () => const ApplicationsListScreen()),
-        GetPage(name: '/add-application', page: () =>  AddApplicationScreen()),
+        GetPage(name: '/add-application', page: () => AddApplicationScreen()),
         GetPage(name: '/profile', page: () => const ProfileScreen()),
         GetPage(name: '/interviews', page: () => const InterviewsListScreen()),
-
+        GetPage(name: '/statistics', page: () => const StatisticsScreen()),
+        GetPage(name: '/faq', page: () => const FaqScreen()),
+        GetPage(name: '/about', page: () => const AboutScreen()),
       ],
     );
   }

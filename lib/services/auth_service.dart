@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../screens/dashboard/dashboard_screen.dart';
 import '../models/user_model.dart';
 import 'firestore_service.dart';
-
 class AuthService extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirestoreService _firestoreService = FirestoreService();
@@ -55,7 +54,6 @@ class AuthService extends GetxController {
       isLoading.value = false;
     }
   }
-
   Future<void> createAccount({
     required String name,
     required String email,
@@ -85,6 +83,17 @@ class AuthService extends GetxController {
 
       await _firestoreService.createUser(user);
 
+      // --- THESE ARE THE CHANGED LINES ---
+
+      // 1. Sign the user out immediately after creating the account
+      await _auth.signOut();
+
+      // 2. Navigate to the Login Screen instead of the Dashboard
+      Get.offAllNamed('/login');
+
+      // 3. Update the success message to guide the user
+      Get.snackbar('Success!', 'Account created successfully. Please log in.',
+          backgroundColor: Colors.green, colorText: Colors.white);
 
     } on FirebaseAuthException catch (e) {
       String message = 'Registration failed';
